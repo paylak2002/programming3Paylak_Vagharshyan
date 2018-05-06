@@ -5,18 +5,6 @@ class kov extends Kendani {
 		this.b = 0;
 		this.index = i;
 	}
-	cord() {
-		this.directions = [
-			[this.x - 1, this.y - 1],
-			[this.x, this.y - 1],
-			[this.x + 1, this.y - 1],
-			[this.x - 1, this.y],
-			[this.x + 1, this.y],
-			[this.x - 1, this.y + 1],
-			[this.x, this.y + 1],
-			[this.x + 1, this.y + 1]
-		];
-	}
 	yntrelVandak(ch) {
 		this.cord();
 		return super.yntrelVandak(ch);
