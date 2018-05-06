@@ -26,7 +26,6 @@ class gishatich extends Kendani {
 			if (gishatichner[i].x == this.x && gishatichner[i].y == this.y) {
 				gishatichner.splice(i, 1);
 				matrix[this.y][this.x] = 0;
-				break;
 			}
 		}
 	}
@@ -37,7 +36,6 @@ class gishatich extends Kendani {
 			for (var i in kover) {
 				if (kover[i].x == ran[0] && kover[i].y == ran[1]) {
 					kover.splice(i, 1);
-					break;
 				}
 			}
 			matrix[ran[1]][ran[0]] = 3;

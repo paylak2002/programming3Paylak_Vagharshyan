@@ -38,7 +38,6 @@ class kaycak extends Kendani {
 					for (var k in xoter) {
 						if (xoter[k].x == i && xoter[k].y == this.y) {
 							xoter.splice(k, 1);
-							break;
 						}
 					}
 				}
@@ -46,7 +45,6 @@ class kaycak extends Kendani {
 					for (var k in kover) {
 						if (kover[k].x == i && kover[k].y == this.y) {
 							kover.splice(k, 1);
-							break;
 						}
 					}
 				}
@@ -54,7 +52,6 @@ class kaycak extends Kendani {
 					for (var k in gishatichner) {
 						if (gishatichner[k].x == i && gishatichner[k].y == this.y) {
 							gishatichner.splice(k, 1);
-							break;
 						}
 					}
 				}
@@ -62,7 +59,6 @@ class kaycak extends Kendani {
 					for (var k in hakakaycakner) {
 						if (hakakaycakner[k].x == i && hakakaycakner[k].y == this.y) {
 							hakakaycakner.splice(k, 1);
-							break;
 						}
 					}
 				}
@@ -75,7 +71,6 @@ class kaycak extends Kendani {
 					for (var k in xoter) {
 						if (xoter[k].y == i && xoter[k].x == this.x) {
 							xoter.splice(k, 1);
-							break;
 						}
 					}
 				}
@@ -83,7 +78,6 @@ class kaycak extends Kendani {
 					for (var k in kover) {
 						if (kover[k].y == i && kover[k].x == this.x) {
 							kover.splice(k, 1);
-							break;
 						}
 					}
 				}
@@ -91,7 +85,6 @@ class kaycak extends Kendani {
 					for (var k in gishatich) {
 						if (gishatich[k].y == i && gishatich[k].x == this.x) {
 							gishatich.splice(k, 1);
-							break;
 						}
 					}
 				}
@@ -99,7 +92,6 @@ class kaycak extends Kendani {
 					for (var k in hakakaycakner) {
 						if (hakakaycakner[k].y == i && hakakaycakner[k].x == this.x) {
 							hakakaycakner.splice(k, 1);
-							break;
 						}
 					}
 				}
