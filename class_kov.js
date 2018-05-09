@@ -1,4 +1,6 @@
-class kov extends Kendani {
+var variable = require("./var");
+var cnox = require("./class_kendani");
+module.exports.class_kov = class kov extends cnox.class_kendani {
 	constructor(x, y, i) {
 		super(x, y);
 		this.e = 5;
@@ -10,35 +12,35 @@ class kov extends Kendani {
 		return super.yntrelVandak(ch);
 	}
 	die() {
-		for (var i in kover) {
-			if (kover[i].x == this.x && kover[i].y == this.y) {
-				kover.splice(i, 1);
-				matrix[this.y][this.x] = 0;
+		for (var i in variable.kover) {
+			if (variable.kover[i].x == this.x && variable.kover[i].y == this.y) {
+				variable.kover.splice(i, 1);
+				variable.matrix[this.y][this.x] = 0;
 			}
 		}
 	}
 	move() {
 		if (random(this.yntrelVandak(1))) {
-			matrix[this.y][this.x] = 0;
+			variable.matrix[this.y][this.x] = 0;
 			var ran = random(this.yntrelVandak(1));
-			for (var i in xoter) {
-				if (xoter[i].x == ran[0] && xoter[i].y == ran[1]) {
-					xoter.splice(i, 1);
+			for (var i in variable.xoter) {
+				if (variable.xoter[i].x == ran[0] && variable.xoter[i].y == ran[1]) {
+					variable.xoter.splice(i, 1);
 				}
 			}
 			this.e = 8;
 			this.b++;
-			matrix[ran[1]][ran[0]] = 2;
+			variable.matrix[ran[1]][ran[0]] = 2;
 			this.x = ran[0];
 			this.y = ran[1];
 		}
 		else {
-			matrix[this.y][this.x] = 0;
+			variable.matrix[this.y][this.x] = 0;
 			var ran = random(this.yntrelVandak(0));
 			this.e--;
 			this.b = 0;
 			if (ran) {
-				matrix[ran[1]][ran[0]] = 2;
+				variable.matrix[ran[1]][ran[0]] = 2;
 				this.x = ran[0];
 				this.y = ran[1];
 			}
@@ -49,8 +51,8 @@ class kov extends Kendani {
 		}
 		if (this.b >= 2) {
 			var ran = random(this.yntrelVandak(0));
-			matrix[ran[1]][ran[0]] = 2;
-			kover.push(new kov(ran[0], ran[1]));
+			variable.matrix[ran[1]][ran[0]] = 2;
+			variable.kover.push(new kov(ran[0], ran[1]));
 		}
 	}
 }

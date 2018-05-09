@@ -4,24 +4,13 @@ var gishatichner = [];
 var hakakaycakner = [];
 var xoter = [];
 var kover = [];
-var matrix = [
-	// [0,0,0,0,0,3,0,3,3,0],
-	// [0,2,0,0,0,0,0,0,3,0],
-	// [0,2,0,2,0,2,0,0,3,0],
-	// [0,0,0,0,0,0,0,0,1,0],
-	// [4,0,0,3,0,2,0,0,1,0],
-	// [0,0,0,0,0,0,0,0,1,0],
-	// [0,0,0,0,0,1,0,0,0,0]
-];
+var matrix = [];
 var X = 40;
 var Y = 20;
 var multiply = 0;
 var multiply1 = 0;
 var multiply2 = 0;
 var multiply3 = 0;
-var audio = new Audio(); audio.src = "neizvesten-zvuki-fermy.mp3";
-var audioKaycak = new Audio(); audioKaycak.src = "wova-zvuki-priroda-udar-molnii.mp3";
-var audioKami = new Audio; audioKami.src = "zvuk-vetra-project_1_(mp3CC.com).mp3";
 var bool = true;
 
 //////////////////////patahakan matrix///////////////////////////////////
@@ -38,3 +27,26 @@ for (var i = 0; i < Y; i++) {
 	}
 }
 matrix[matrix.length - 1][matrix[0].length - 1] = 4;
+
+global.random = function(arr){
+    var rand = Math.floor(Math.random() * arr.length);
+    return arr[rand];
+}
+
+module.exports = {
+	S				:	S,
+	kaycakner		:	kaycakner,
+	gishatichner	:	gishatichner,
+	hakakaycakner	:	hakakaycakner,
+	xoter			:	xoter,
+	kover			:	kover,
+	matrix			:	matrix,
+	X				:	X,
+	Y				:	Y,
+	multiply		:	multiply,
+	multiply1		:	multiply1,
+	multiply2		:	multiply2,
+	multiply3		:	multiply3,
+	bool			:	bool
+}
+

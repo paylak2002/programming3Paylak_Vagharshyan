@@ -1,4 +1,6 @@
-class xot extends Kendani {
+var variable = require("./var");
+var cnox = require("./class_kendani");
+module.exports.class_xot = class xot extends cnox.class_kendani {
 	constructor(x, y) {
 		super(x, y);
 		this.directions = [
@@ -15,8 +17,8 @@ class xot extends Kendani {
 	mull() {
 		var ran = random(this.yntrelVandak(0));
 		if (ran) {
-			matrix[ran[1]][ran[0]] = 1;
-			xoter.push(new xot(ran[0], ran[1]));
+			variable.matrix[ran[1]][ran[0]] = 1;
+			variable.xoter.push(new xot(ran[0], ran[1]));
 		}
 	}
 }

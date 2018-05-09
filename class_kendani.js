@@ -1,4 +1,5 @@
-class Kendani {
+var variable = require("./var");
+module.exports.class_kendani = class Kendani {
 	constructor(x, y) {
 		this.x = x;
 		this.y = y;
@@ -20,12 +21,12 @@ class Kendani {
 		for (var i in this.directions) {
 			var x = this.directions[i][0];
 			var y = this.directions[i][1];
-			if (x >= 0 && x < matrix[0].length && y >= 0 && y < matrix.length) {
-				if (matrix[y][x] == ch) {
+			if (x >= 0 && x < variable.matrix[0].length && y >= 0 && y < variable.matrix.length) {
+				if (variable.matrix[y][x] == ch) {
 					found.push(this.directions[i]);
 				}
 			}
 		}
 		return found;
 	}
-}
+} 

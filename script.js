@@ -1,24 +1,32 @@
+var variable = require("./var");
+var kendaniner_class = {
+	gish : require("./class_gishatich").class_gishatich,
+	haka : require("./class_hakakaycak").class_hakakaycak,
+	kayc : require("./class_kaycak").class_kaycak,
+	ko : require("./class_kov").class_kov,
+	xo : require("./class_xot").class_xot
+}
 //////////////////////hakakaycakneri grancman hamar///////////////////
-for (var i = 0; i < matrix.length; ++i) {
-	for (var j = 0; j < matrix[i].length; ++j) {
-		if (matrix[i][j] == 5) {
-			hakakaycakner.push(new hakaK(j, i, hakakaycakner.length));
+for (var i = 0; i < variable.matrix.length; ++i) {
+	for (var j = 0; j < variable.matrix[i].length; ++j) {
+		if (variable.matrix[i][j] == 5) {
+			variable.hakakaycakner.push(new kendaniner_class.haka(j, i, variable.hakakaycakner.length));
 		}
 	}
 }
 //////////////////////kaycakneri grancman kamar vorpes obekr//////////
-for (var i = 0; i < matrix.length; ++i) {
-	for (var j = 0; j < matrix[i].length; ++j) {
-		if (matrix[i][j] == 4) {
-			kaycakner.push(new kaycak(j, i, kaycakner.length));
+for (var i = 0; i < variable.matrix.length; ++i) {
+	for (var j = 0; j < variable.matrix[i].length; ++j) {
+		if (variable.matrix[i][j] == 4) {
+			variable.kaycakner.push(new kendaniner_class.kayc(j, i, variable.kaycakner.length));
 		}
 	}
 }
 //////////////////////gishatichneri grancman hamar/////////////////////
-for (var i = 0; i < matrix.length; ++i) {
-	for (var j = 0; j < matrix[i].length; ++j) {
-		if (matrix[i][j] == 3) {
-			gishatichner.push(new gishatich(j, i, gishatichner.length));
+for (var i = 0; i < variable.matrix.length; ++i) {
+	for (var j = 0; j < variable.matrix[i].length; ++j) {
+		if (variable.matrix[i][j] == 3) {
+			variable.gishatichner.push(new kendaniner_class.gish(j, i, variable.gishatichner.length));
 		}
 	}
 }
@@ -26,135 +34,120 @@ for (var i = 0; i < matrix.length; ++i) {
 
 ///////////////////////exac xoteri grancumo vorpes obekt////////////////////
 
-for (var i = 0; i < matrix.length; ++i) {
-	for (var j = 0; j < matrix[i].length; ++j) {
-		if (matrix[i][j] == 1) {
-			xoter.push(new xot(j, i));
+for (var i = 0; i < variable.matrix.length; ++i) {
+	for (var j = 0; j < variable.matrix[i].length; ++j) {
+		if (variable.matrix[i][j] == 1) {
+			variable.xoter.push(new kendaniner_class.xo(j, i));
 		}
 	}
 }
 //////////////////////         koveri grancman hamar          //////////////////////////
 
-for (var i = 0; i < matrix.length; ++i) {
-	for (var j = 0; j < matrix[i].length; ++j) {
-		if (matrix[i][j] == 2) {
-			kover.push(new kov(j, i, kover.length));
+for (var i = 0; i < variable.matrix.length; ++i) {
+	for (var j = 0; j < variable.matrix[i].length; ++j) {
+		if (variable.matrix[i][j] == 2) {
+			variable.kover.push(new kendaniner_class.ko(j, i, variable.kover.length));
 		}
 	}
 }
 
 /////////////////////////////////////////////////////////////////////////////////////
 
-function setup() {
-	createCanvas(X * S, Y * S);
-	background("'#acacac");
-}
-
-function draw() {
-	if (bool == true) {
-		audio.play();
-	}
-	else {
-		audioKami.play();
-	}
-	frameRate(10);
-	multiply++;
-	multiply1++;
-	multiply2++;
-	multiply3++;
+setInterval(function(){
+///////////////////////////////////////////////////////////////
+	variable.multiply++;
+	variable.multiply1++;
+	variable.multiply2++;
+	variable.multiply3++;
 	/////////////////////////kaycakneri verakendanacman hamar///////////////////////////
-	var arrR = [[0, 0], [matrix[0].length - 1, matrix.length - 1]];
-	var rXY = random(arrR);
-	if (kover.length != 0 && gishatichner.length != 0) {
-		if (kaycakner.length == 0) {
-			if (matrix[rXY[1]][rXY[0]] == 1) {
-				for (var k in xoter) {
-					if (xoter[k].x == rXY[0] && xoter[k].y == rXY[1]) {
-						xoter.splice(k, 1);
+	var arrR = [[0, 0], [variable.matrix[0].length - 1, variable.matrix.length - 1]];
+	var rXY = Math.floor(Math.random() * 2);
+	if (variable.kover.length != 0 && variable.gishatichner.length != 0) {
+		if (variable.kaycakner.length == 0) {
+			if (variable.matrix[rXY[1]][rXY[0]] == 1) {
+				for (var k in variable.xoter) {
+					if (variable.xoter[k].x == rXY[0] && variable.xoter[k].y == rXY[1]) {
+						variable.xoter.splice(k, 1);
 					}
 				}
 			}
-			else if (matrix[rXY[1]][rXY[0]] == 2) {
-				for (var k in kover) {
-					if (kover[k].x == rXY[0] && kover[k].y == rXY[1]) {
-						kover.splice(k, 1);
+			else if (variable.matrix[rXY[1]][rXY[0]] == 2) {
+				for (var k in variable.kover) {
+					if (variable.kover[k].x == rXY[0] && variable.kover[k].y == rXY[1]) {
+						variable.kover.splice(k, 1);
 					}
 				}
 			}
-			else if (matrix[rXY[1]][rXY[0]] == 3) {
-				for (var k in gishatichner) {
-					if (gishatichner[k].x == rXY[0] && gishatichner[k].y == rXY[1]) {
-						gishatichner.splice(k, 1);
+			else if (variable.matrix[rXY[1]][rXY[0]] == 3) {
+				for (var k in variable.gishatichner) {
+					if (variable.gishatichner[k].x == rXY[0] && variable.gishatichner[k].y == rXY[1]) {
+						variable.gishatichner.splice(k, 1);
 					}
 				}
 			}
-			else if (matrix[rXY[1]][rXY[0]] == 5) {
-				for (var k in hakakaycakner) {
-					if (hakakaycakner[k].x == rXY[0] && hakakaycakner[k].y == rXY[1]) {
-						hakakaycakner.splice(k, 1);
+			else if (variable.matrix[rXY[1]][rXY[0]] == 5) {
+				for (var k in variable.hakakaycakner) {
+					if (variable.hakakaycakner[k].x == rXY[0] && variable.hakakaycakner[k].y == rXY[1]) {
+						variable.hakakaycakner.splice(k, 1);
 					}
 				}
 			}
-			kaycakner.push(new kaycak(rXY[0], rXY[1], kaycakner.length));
-			matrix[rXY[1]][rXY[0]] = 4;
+			variable.kaycakner.push(new kaycak(rXY[0], rXY[1], variable.kaycakner.length));
+			variable.matrix[rXY[1]][rXY[0]] = 4;
 		}
 	}
 	//////////////////////////////////////////////////////////////////////////////
-	for (var i = 0; i < matrix.length; ++i) {
-		for (var j = 0; j < matrix[i].length; ++j) {
-			if (matrix[i][j] == 0) {
-				fill('#acacac');
-				rect(j * S, i * S, S, S);
+	for (var i = 0; i < variable.matrix.length; ++i) {
+		for (var j = 0; j < variable.matrix[i].length; ++j) {
+			if (variable.matrix[i][j] == 0) {
+				console.log("0");
 			}
-			else if (matrix[i][j] == 1) {
-				fill(0, 250, 0);
-				rect(j * S, i * S, S, S);
+			else if (variable.matrix[i][j] == 1) {
+				console.log("1");
 			}
-			else if (matrix[i][j] == 2) {
-				fill(0, 0, 250);
-				rect(j * S, i * S, S, S);
+			else if (variable.matrix[i][j] == 2) {
+				console.log("2");
 			}
-			else if (matrix[i][j] == 3) {
-				fill(500, 0, 0);
-				rect(j * S, i * S, S, S);
+			else if (variable.matrix[i][j] == 3) {
+				console.log("3");
 			}
-			else if (matrix[i][j] == 4) {
-				fill("yellow");
-				rect(j * S, i * S, S, S);
+			else if (variable.matrix[i][j] == 4) {
+				console.log("4");
 			}
-			else if (matrix[i][j] == 5) {
-				fill("black");
-				rect(j * S, i * S, S, S);
+			else if (variable.matrix[i][j] == 5) {
+				console.log("5");
 			}
 		}
 	}
-	if (multiply >= 1) {
-		for (var i in xoter) {
-			xoter[i].mull();
+	if (variable.multiply >= 1) {
+		for (var i in variable.xoter) {
+			variable.xoter[i].mull();
 		}
-		multiply = 0;
+		variable.multiply = 0;
 	}
-	if (multiply2 >= 2) {
-		for (var i in kover) {
-			kover[i].move();
+	if (variable.multiply2 >= 2) {
+		for (var i in variable.kover) {
+			variable.kover[i].move();
 		}
-		multiply2 = 0;
+		variable.multiply2 = 0;
 	}
-	if (multiply1 >= 3) {
-		for (var i in gishatichner) {
-			gishatichner[i].move();
+	if (variable.multiply1 >= 3) {
+		for (var i in variable.gishatichner) {
+			variable.gishatichner[i].move();
 		}
-		multiply1 = 0;
+		variable.multiply1 = 0;
 	}
-	if (multiply3 >= 4) {
-		for (var i in kaycakner) {
-			kaycakner[i].move();
-			kaycakner[i].krakel();
-			kaycakner[i].die();
+	if (variable.multiply3 >= 4) {
+		for (var i in variable.kaycakner) {
+			variable.kaycakner[i].move();
+			variable.kaycakner[i].krakel();
+			variable.kaycakner[i].die();
 		}
-		for (var i in hakakaycakner) {
-			hakakaycakner[i].voronum();
+		for (var i in variable.hakakaycakner) {
+			variable.hakakaycakner[i].voronum();
 		}
-		multiply3 = 0;
+		variable.multiply3 = 0;
 	}
-}
+
+//////////////////////////////////////////////////////////////
+},500);
