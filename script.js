@@ -59,66 +59,6 @@ setInterval(function(){
 	variable.multiply1++;
 	variable.multiply2++;
 	variable.multiply3++;
-	/////////////////////////kaycakneri verakendanacman hamar///////////////////////////
-	var arrR = [[0, 0], [variable.matrix[0].length - 1, variable.matrix.length - 1]];
-	var rXY = Math.floor(Math.random() * 2);
-	if (variable.kover.length != 0 && variable.gishatichner.length != 0) {
-		if (variable.kaycakner.length == 0) {
-			if (variable.matrix[rXY[1]][rXY[0]] == 1) {
-				for (var k in variable.xoter) {
-					if (variable.xoter[k].x == rXY[0] && variable.xoter[k].y == rXY[1]) {
-						variable.xoter.splice(k, 1);
-					}
-				}
-			}
-			else if (variable.matrix[rXY[1]][rXY[0]] == 2) {
-				for (var k in variable.kover) {
-					if (variable.kover[k].x == rXY[0] && variable.kover[k].y == rXY[1]) {
-						variable.kover.splice(k, 1);
-					}
-				}
-			}
-			else if (variable.matrix[rXY[1]][rXY[0]] == 3) {
-				for (var k in variable.gishatichner) {
-					if (variable.gishatichner[k].x == rXY[0] && variable.gishatichner[k].y == rXY[1]) {
-						variable.gishatichner.splice(k, 1);
-					}
-				}
-			}
-			else if (variable.matrix[rXY[1]][rXY[0]] == 5) {
-				for (var k in variable.hakakaycakner) {
-					if (variable.hakakaycakner[k].x == rXY[0] && variable.hakakaycakner[k].y == rXY[1]) {
-						variable.hakakaycakner.splice(k, 1);
-					}
-				}
-			}
-			variable.kaycakner.push(new kaycak(rXY[0], rXY[1], variable.kaycakner.length));
-			variable.matrix[rXY[1]][rXY[0]] = 4;
-		}
-	}
-	//////////////////////////////////////////////////////////////////////////////
-	for (var i = 0; i < variable.matrix.length; ++i) {
-		for (var j = 0; j < variable.matrix[i].length; ++j) {
-			if (variable.matrix[i][j] == 0) {
-				console.log("0");
-			}
-			else if (variable.matrix[i][j] == 1) {
-				console.log("1");
-			}
-			else if (variable.matrix[i][j] == 2) {
-				console.log("2");
-			}
-			else if (variable.matrix[i][j] == 3) {
-				console.log("3");
-			}
-			else if (variable.matrix[i][j] == 4) {
-				console.log("4");
-			}
-			else if (variable.matrix[i][j] == 5) {
-				console.log("5");
-			}
-		}
-	}
 	if (variable.multiply >= 1) {
 		for (var i in variable.xoter) {
 			variable.xoter[i].mull();
@@ -148,6 +88,83 @@ setInterval(function(){
 		}
 		variable.multiply3 = 0;
 	}
-
+	console.log(variable.matrix);
 //////////////////////////////////////////////////////////////
 },500);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// /////////////////////////kaycakneri verakendanacman hamar///////////////////////////
+// var arrR = [[0, 0], [variable.matrix[0].length - 1, variable.matrix.length - 1]];
+// var rXY = Math.floor(Math.random() * 2);
+// if (variable.kover.length != 0 && variable.gishatichner.length != 0) {
+// 	if (variable.kaycakner.length == 0) {
+// 		if (variable.matrix[rXY[1]][rXY[0]] == 1) {
+// 			for (var k in variable.xoter) {
+// 				if (variable.xoter[k].x == rXY[0] && variable.xoter[k].y == rXY[1]) {
+// 					variable.xoter.splice(k, 1);
+// 				}
+// 			}
+// 		}
+// 		else if (variable.matrix[rXY[1]][rXY[0]] == 2) {
+// 			for (var k in variable.kover) {
+// 				if (variable.kover[k].x == rXY[0] && variable.kover[k].y == rXY[1]) {
+// 					variable.kover.splice(k, 1);
+// 				}
+// 			}
+// 		}
+// 		else if (variable.matrix[rXY[1]][rXY[0]] == 3) {
+// 			for (var k in variable.gishatichner) {
+// 				if (variable.gishatichner[k].x == rXY[0] && variable.gishatichner[k].y == rXY[1]) {
+// 					variable.gishatichner.splice(k, 1);
+// 				}
+// 			}
+// 		}
+// 		else if (variable.matrix[rXY[1]][rXY[0]] == 5) {
+// 			for (var k in variable.hakakaycakner) {
+// 				if (variable.hakakaycakner[k].x == rXY[0] && variable.hakakaycakner[k].y == rXY[1]) {
+// 					variable.hakakaycakner.splice(k, 1);
+// 				}
+// 			}
+// 		}
+// 		variable.kaycakner.push(new kaycak(rXY[0], rXY[1], variable.kaycakner.length));
+// 		variable.matrix[rXY[1]][rXY[0]] = 4;
+// 	}
+// }
+// //////////////////////////////////////////////////////////////////////////////
