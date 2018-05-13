@@ -1,3 +1,4 @@
+console.log(global);
 function setup() {
 	createCanvas(X * S, Y * S);
 	background("'#acacac");
