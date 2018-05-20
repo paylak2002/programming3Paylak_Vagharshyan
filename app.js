@@ -1,3 +1,17 @@
+var express = require("express");
+var app = express();
+var server = require('http').Server(app);
+var io = require('socket.io')(server);
+
+app.use(express.static("public"));
+
+app.get("/", function(req, res){
+   res.sendFile(__dirname + "/index.html");
+});
+
+server.listen(3000, function(){
+   console.log("Start");
+});
 var variable = require("./var");
 var kendaniner_class = {
 	gish : require("./class_gishatich").class_gishatich,
@@ -53,52 +67,44 @@ for (var i = 0; i < variable.matrix.length; ++i) {
 
 /////////////////////////////////////////////////////////////////////////////////////
 
-setInterval(function(){
+io.on('connection',function(socket){
+	setInterval(function(){
 ///////////////////////////////////////////////////////////////
-	variable.multiply++;
-	variable.multiply1++;
-	variable.multiply2++;
-	variable.multiply3++;
-	if (variable.multiply >= 1) {
-		for (var i in variable.xoter) {
-			variable.xoter[i].mull();
+		variable.multiply++;
+		variable.multiply1++;
+		variable.multiply2++;
+		variable.multiply3++;
+		if (variable.multiply >= 1) {
+			for (var i in variable.xoter) {
+				variable.xoter[i].mull();
+			}
+			variable.multiply = 0;
 		}
-		variable.multiply = 0;
-	}
-	if (variable.multiply2 >= 2) {
-		for (var i in variable.kover) {
-			variable.kover[i].move();
+		if (variable.multiply2 >= 2) {
+			for (var i in variable.kover) {
+				variable.kover[i].move();
+			}
+			variable.multiply2 = 0;
 		}
-		variable.multiply2 = 0;
-	}
-	if (variable.multiply1 >= 3) {
-		for (var i in variable.gishatichner) {
-			variable.gishatichner[i].move();
+		if (variable.multiply1 >= 3) {
+			for (var i in variable.gishatichner) {
+				variable.gishatichner[i].move();
+			}
+			variable.multiply1 = 0;
 		}
-		variable.multiply1 = 0;
-	}
-	if (variable.multiply3 >= 4) {
-		for (var i in variable.kaycakner) {
-			variable.kaycakner[i].move();
-			variable.kaycakner[i].krakel();
-			variable.kaycakner[i].die();
+		if (variable.multiply3 >= 4) {
+			for (var i in variable.kaycakner) {
+				variable.kaycakner[i].move();
+				variable.kaycakner[i].krakel();
+				variable.kaycakner[i].die();
+			}
+			for (var i in variable.hakakaycakner) {
+				variable.hakakaycakner[i].voronum();
+			}
+			variable.multiply3 = 0;
 		}
-		for (var i in variable.hakakaycakner) {
-			variable.hakakaycakner[i].voronum();
-		}
-		variable.multiply3 = 0;
-	}
-//////////////////////////////////////////////////////////////
-},500);
-var express = require("express");
-var app = express();
-
-app.use(express.static("public"));
-
-app.get("/", function(req, res){
-   res.sendFile(__dirname + "/index.html");
+		io.sockets.emit('matrix' ,variable.matrix);
+	//////////////////////////////////////////////////////////////
+	},500);
 });
 
-app.listen(3000, function(){
-   console.log("Start");
-});
