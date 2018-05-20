@@ -3,11 +3,10 @@ var kaycakner = [];
 var gishatichner = [];
 var hakakaycakner = [];
 var xoter = [];
-var kover = []; 
+var kover = [];
 var matrix = [];
-var X = 30;
-var Y = 15;
-var multiply = 0;
+var X = 5;
+var Y = 5;
 var multiply1 = 0;
 var multiply2 = 0;
 var multiply3 = 0;
@@ -43,10 +42,8 @@ module.exports = {
 	matrix			:	matrix,
 	X				:	X,
 	Y				:	Y,
-	multiply		:	multiply,
 	multiply1		:	multiply1,
 	multiply2		:	multiply2,
 	multiply3		:	multiply3,
 	bool			:	bool
 }
-

@@ -66,19 +66,16 @@ for (var i = 0; i < variable.matrix.length; ++i) {
 }
 
 /////////////////////////////////////////////////////////////////////////////////////
+process.env.NODE_ENV='production';
 
 io.on('connection',function(socket){
 	setInterval(function(){
 ///////////////////////////////////////////////////////////////
-		variable.multiply++;
 		variable.multiply1++;
 		variable.multiply2++;
 		variable.multiply3++;
-		if (variable.multiply >= 1) {
-			for (var i in variable.xoter) {
-				variable.xoter[i].mull();
-			}
-			variable.multiply = 0;
+		for (var i in variable.xoter) {
+			variable.xoter[i].mull();
 		}
 		if (variable.multiply2 >= 2) {
 			for (var i in variable.kover) {
@@ -105,6 +102,5 @@ io.on('connection',function(socket){
 		}
 		io.sockets.emit('matrix' ,variable.matrix);
 	//////////////////////////////////////////////////////////////
-	},500);
+},200);
 });
-
