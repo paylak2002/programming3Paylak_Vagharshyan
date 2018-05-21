@@ -27,6 +27,7 @@ module.exports.class_kaycak = class kaycak extends cnox.class_kendani {
 					for (var k in variable.xoter) {
 						if (variable.xoter[k].x == i && variable.xoter[k].y == this.y) {
 							variable.xoter.splice(k, 1);
+							break;
 						}
 					}
 				}
@@ -34,6 +35,7 @@ module.exports.class_kaycak = class kaycak extends cnox.class_kendani {
 					for (var k in variable.kover) {
 						if (variable.kover[k].x == i && variable.kover[k].y == this.y) {
 							variable.kover.splice(k, 1);
+							break;
 						}
 					}
 				}
@@ -41,6 +43,7 @@ module.exports.class_kaycak = class kaycak extends cnox.class_kendani {
 					for (var k in variable.gishatichner) {
 						if (variable.gishatichner[k].x == i && variable.gishatichner[k].y == this.y) {
 							variable.gishatichner.splice(k, 1);
+							break;
 						}
 					}
 				}
@@ -48,6 +51,7 @@ module.exports.class_kaycak = class kaycak extends cnox.class_kendani {
 					for (var k in variable.hakakaycakner) {
 						if (variable.hakakaycakner[k].x == i && variable.hakakaycakner[k].y == this.y) {
 							variable.hakakaycakner.splice(k, 1);
+							break;
 						}
 					}
 				}
@@ -60,6 +64,7 @@ module.exports.class_kaycak = class kaycak extends cnox.class_kendani {
 					for (var k in variable.xoter) {
 						if (variable.xoter[k].y == i && variable.xoter[k].x == this.x) {
 							variable.xoter.splice(k, 1);
+							break;
 						}
 					}
 				}
@@ -67,6 +72,7 @@ module.exports.class_kaycak = class kaycak extends cnox.class_kendani {
 					for (var k in variable.kover) {
 						if (variable.kover[k].y == i && variable.kover[k].x == this.x) {
 							variable.kover.splice(k, 1);
+							break;
 						}
 					}
 				}
@@ -74,6 +80,7 @@ module.exports.class_kaycak = class kaycak extends cnox.class_kendani {
 					for (var k in variable.gishatich) {
 						if (variable.gishatich[k].y == i && variable.gishatich[k].x == this.x) {
 							variable.gishatich.splice(k, 1);
+							break;
 						}
 					}
 				}
@@ -81,6 +88,7 @@ module.exports.class_kaycak = class kaycak extends cnox.class_kendani {
 					for (var k in variable.hakakaycakner) {
 						if (variable.hakakaycakner[k].y == i && variable.hakakaycakner[k].x == this.x) {
 							variable.hakakaycakner.splice(k, 1);
+							break;
 						}
 					}
 				}

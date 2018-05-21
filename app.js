@@ -100,7 +100,13 @@ io.on('connection',function(socket){
 			}
 			variable.multiply3 = 0;
 		}
-		io.sockets.emit('matrix' ,variable.matrix);
+    if(variable.gishatichner.length != 0 && variable.kover.length != 0)
+    {
+      io.sockets.emit('matrix' ,variable.matrix);
+    }
+    else {
+      io.sockets.emit('bool');
+    }
 	//////////////////////////////////////////////////////////////
-},200);
+},1000);
 });

@@ -4,6 +4,9 @@ function setup(){
 	background('#000');
 }
 function draw(){
+	socket.on('bool',function(data){
+		background('#000');
+	});
 	socket.on('matrix',function(data){
 		for(var i in data)
 		{
@@ -26,7 +29,7 @@ function draw(){
 				}
 				else if(data[i][j] == 3)
 				{
-					fill('green');
+					fill('lightblue');
 					rect(j * 10,i * 10,10,10);
 				}
 				else if(data[i][j] == 4)
@@ -36,7 +39,7 @@ function draw(){
 				}
 				else if(data[i][j] == 5)
 				{
-					fill('bleak');
+					fill('#00f');
 					rect(j * 10,i * 10,10,10);
 				}
 			}
