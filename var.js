@@ -5,12 +5,13 @@ var hakakaycakner = [];
 var xoter = [];
 var kover = [];
 var matrix = [];
-var X = 5;
-var Y = 5;
+var X = 30;
+var Y = 30;
 var multiply1 = 0;
 var multiply2 = 0;
 var multiply3 = 0;
 var bool = true;
+var exanak = 0;
 
 //////////////////////patahakan matrix///////////////////////////////////
 for (var i = 0; i < Y; i++) {
@@ -45,5 +46,6 @@ module.exports = {
 	multiply1		:	multiply1,
 	multiply2		:	multiply2,
 	multiply3		:	multiply3,
-	bool			:	bool
+	bool			:	bool,
+	exanak			:	exanak,
 }

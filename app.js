@@ -12,6 +12,7 @@ app.get("/", function(req, res){
 server.listen(3000, function(){
    console.log("Start");
 });
+var exanak_multiply = 0;
 var variable = require("./var");
 var kendaniner_class = {
 	gish : require("./class_gishatich").class_gishatich,
@@ -100,13 +101,41 @@ io.on('connection',function(socket){
 			}
 			variable.multiply3 = 0;
 		}
-    if(variable.gishatichner.length != 0 && variable.kover.length != 0)
-    {
-      io.sockets.emit('matrix' ,variable.matrix);
-    }
-    else {
-      io.sockets.emit('bool');
-    }
-	//////////////////////////////////////////////////////////////
-},1000);
+		//////////////////////////////////////////////////
+		exanak_multiply++;
+		if(exanak_multiply >= 40)
+		{
+			exanak_multiply = 0;
+			variable.exanak++;
+			if(variable.exanak >= 4)
+			{
+				variable.exanak = 0;
+			}
+		}
+		if(variable.exanak == 0)
+		{
+			socket.emit('number',0);
+		}
+		else if(variable.exanak == 1)
+		{
+			socket.emit('number',1);
+		}
+		else if(variable.exanak == 2)
+		{
+			socket.emit('number',2);
+		}
+		else if(variable.exanak == 3)
+		{
+			socket.emit('number',3);
+		}
+		/////////////////////////////////////////////////////
+		if(variable.gishatichner.length != 0 && variable.kover.length != 0)
+		{
+		io.sockets.emit('matrix' ,variable.matrix);
+		}
+		else {
+		io.sockets.emit('bool');
+		}
+		//////////////////////////////////////////////////////////////
+	},500);
 });
