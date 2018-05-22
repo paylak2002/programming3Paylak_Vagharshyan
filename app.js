@@ -107,9 +107,11 @@ io.on('connection',function(socket){
 		{
 			exanak_multiply = 0;
 			variable.exanak++;
+			exanak_global++;
 			if(variable.exanak >= 4)
 			{
 				variable.exanak = 0;
+				exanak_global = 0
 			}
 		}
 		if(variable.exanak == 0)
@@ -137,5 +139,6 @@ io.on('connection',function(socket){
 		io.sockets.emit('bool');
 		}
 		//////////////////////////////////////////////////////////////
+	console.log(exanak_global);
 	},500);
 });

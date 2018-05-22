@@ -2,7 +2,7 @@ var xoteri_guyn = '';
 var socket = io.connect('http://localhost:3000');
 function setup(){
 	createCanvas(30 * 10,30 * 10);
-	background('#000');
+	background('#0ff');
 }
 socket.on('bool',function(data){
 	background('#000');

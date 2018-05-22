@@ -12,7 +12,7 @@ var multiply2 = 0;
 var multiply3 = 0;
 var bool = true;
 var exanak = 0;
-
+global.exanak_global = exanak;
 //////////////////////patahakan matrix///////////////////////////////////
 for (var i = 0; i < Y; i++) {
 	matrix.push([]);
