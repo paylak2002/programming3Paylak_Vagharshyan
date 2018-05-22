@@ -50,7 +50,7 @@ module.exports.class_kov = class kov extends cnox.class_kendani {
 		if (this.e <= 0) {
 			this.die();
 		}
-		if (this.b >= 2) {
+		if (this.b >= 2 && exanak_global != 3) {
 			var ran = random(this.yntrelVandak(0));
 			variable.matrix[ran[1]][ran[0]] = 2;
 			variable.kover.push(new kov(ran[0], ran[1]));

@@ -3,7 +3,18 @@ var cnox = require("./class_kendani");
 module.exports.class_gishatich = class gishatich extends cnox.class_kendani {
 	constructor(x, y, i) {
 		super(x, y);
-		this.e = 20;
+		if(exanak_global == 0)
+		{
+			this.e = 20;
+		}
+		else if(exanak_global == 3)
+		{
+			this.e = 10;
+		}
+		else
+		{
+			this.e = 15;
+		}
 		this.b = 0;
 		this.index = i;
 	}

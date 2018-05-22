@@ -91,11 +91,14 @@ io.on('connection',function(socket){
 			variable.multiply1 = 0;
 		}
 		if (variable.multiply3 >= 4) {
-			for (var i in variable.kaycakner) {
-				variable.kaycakner[i].move();
-				variable.kaycakner[i].krakel();
-				variable.kaycakner[i].die();
-			}
+      if(exanak_global == 2 || exanak_global == 0)
+      {
+        for (var i in variable.kaycakner) {
+          variable.kaycakner[i].move();
+          variable.kaycakner[i].krakel();
+          variable.kaycakner[i].die();
+        }
+      }
 			for (var i in variable.hakakaycakner) {
 				variable.hakakaycakner[i].voronum();
 			}
@@ -139,6 +142,5 @@ io.on('connection',function(socket){
 		io.sockets.emit('bool');
 		}
 		//////////////////////////////////////////////////////////////
-	console.log(exanak_global);
 	},500);
 });

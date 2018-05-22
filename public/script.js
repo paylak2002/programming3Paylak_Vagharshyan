@@ -34,7 +34,7 @@ socket.on('matrix',function(data){
 			}
 			else if(data[i][j] == 4)
 			{
-				fill('#ffff66');
+				fill('red');
 				rect(j * 10,i * 10,10,10);
 			}
 			else if(data[i][j] == 5)
@@ -62,7 +62,7 @@ socket.on('number',function(data){
 	}
 	else if(data == 2)
 	{
-		xoteri_guyn = 'yellow';
+		xoteri_guyn = 'lightyellow';
 		$(document).ready(function(){
 			$(".h1_text").text('Աշուն');
 		});
@@ -71,7 +71,7 @@ socket.on('number',function(data){
 	{
 		xoteri_guyn = 'lightblue';
 		$(document).ready(function(){
-			$(".h1_text").text('Ձմեռ');						
+			$(".h1_text").text('Ձմեռ');
 		});
 	}
 });
