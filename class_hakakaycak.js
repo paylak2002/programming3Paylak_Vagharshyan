@@ -11,7 +11,16 @@ module.exports.class_hakakaycak = class hakaK extends cnox.class_kendani {
 			var cX = variable.kaycakner[0].x;
 			var cY = variable.kaycakner[0].y;
 			if (arr.length == 1) {
-				console.log('jan');
+				var obj = {
+					name 		: 'kaycak',
+					time 		: variable.time,
+					patjar	: 'hakakaycakneric',
+					cord		: {
+											x : arr[0][0],
+											y : arr[0][1]
+										}
+				}
+				variable.arr_obj.push(obj);
 				variable.kaycakner.splice(0, 1);
 				variable.matrix[this.y][this.x] = 0;
 				variable.matrix[arr[0][1]][arr[0][0]] = 5;
