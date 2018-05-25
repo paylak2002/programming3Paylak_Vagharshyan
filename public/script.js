@@ -2,7 +2,7 @@ var xoteri_guyn = '';
 var socket = io.connect('http://localhost:3000');
 function setup(){
 	createCanvas(30 * 10,30 * 10);
-	background('#0ff');
+	background('#acacac');
 }
 socket.on('bool',function(data){
 	background('#000');
@@ -14,7 +14,7 @@ socket.on('matrix',function(data){
 		{
 			if(data[i][j] == 0)
 			{
-				fill('#0ff');
+				fill('#acacac');
 				rect(j * 10,i * 10,10,10);
 			}
 			else if(data[i][j] == 1)
@@ -29,12 +29,12 @@ socket.on('matrix',function(data){
 			}
 			else if(data[i][j] == 3)
 			{
-				fill('#666699');
+				fill('red');
 				rect(j * 10,i * 10,10,10);
 			}
 			else if(data[i][j] == 4)
 			{
-				fill('red');
+				fill('orange');
 				rect(j * 10,i * 10,10,10);
 			}
 			else if(data[i][j] == 5)
