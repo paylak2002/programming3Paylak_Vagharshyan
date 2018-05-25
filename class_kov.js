@@ -14,6 +14,12 @@ module.exports.class_kov = class kov extends cnox.class_kendani {
 	die() {
 		for (var i in variable.kover) {
 			if (variable.kover[i].x == this.x && variable.kover[i].y == this.y) {
+				var obj = {
+					name 		: 'xotaker',
+					time 		: variable.time,
+					patjar	: 'sovic'
+				}
+				variable.arr_obj.push(obj);
 				variable.kover.splice(i, 1);
 				variable.matrix[this.y][this.x] = 0;
 				break;

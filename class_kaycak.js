@@ -34,6 +34,12 @@ module.exports.class_kaycak = class kaycak extends cnox.class_kendani {
 				else if (variable.matrix[this.y][i] == 2) {
 					for (var k in variable.kover) {
 						if (variable.kover[k].x == i && variable.kover[k].y == this.y) {
+							var obj = {
+								name 		: 'xotaker',
+								time 		: variable.time,
+								patjar	: 'mahacel e kaycakic'
+							}
+							variable.arr_obj.push(obj);
 							variable.kover.splice(k, 1);
 							break;
 						}
@@ -42,6 +48,12 @@ module.exports.class_kaycak = class kaycak extends cnox.class_kendani {
 				else if (variable.matrix[this.y][i] == 3) {
 					for (var k in variable.gishatichner) {
 						if (variable.gishatichner[k].x == i && variable.gishatichner[k].y == this.y) {
+							var obj = {
+								name 		: 'gishatich',
+								time 		: variable.time,
+								patjar	: 'mahacel e kaycakic'
+							}
+							variable.arr_obj.push(obj);
 							variable.gishatichner.splice(k, 1);
 							break;
 						}
@@ -50,6 +62,12 @@ module.exports.class_kaycak = class kaycak extends cnox.class_kendani {
 				else if (variable.matrix[this.y][i] == 5) {
 					for (var k in variable.hakakaycakner) {
 						if (variable.hakakaycakner[k].x == i && variable.hakakaycakner[k].y == this.y) {
+							var obj = {
+								name 		: 'hakakaycak',
+								time 		: variable.time,
+								patjar	: 'mahacel e kaycakic'
+							}
+							variable.arr_obj.push(obj);
 							variable.hakakaycakner.splice(k, 1);
 							break;
 						}
@@ -71,6 +89,12 @@ module.exports.class_kaycak = class kaycak extends cnox.class_kendani {
 				else if (variable.matrix[i][this.x] == 2) {
 					for (var k in variable.kover) {
 						if (variable.kover[k].y == i && variable.kover[k].x == this.x) {
+							var obj = {
+								name 		: 'xotaker',
+								time 		: variable.time,
+								patjar	: 'sovic'
+							}
+							variable.arr_obj.push(obj);
 							variable.kover.splice(k, 1);
 							break;
 						}
@@ -79,6 +103,12 @@ module.exports.class_kaycak = class kaycak extends cnox.class_kendani {
 				else if (variable.matrix[i][this.x] == 3) {
 					for (var k in variable.gishatich) {
 						if (variable.gishatich[k].y == i && variable.gishatich[k].x == this.x) {
+							var obj = {
+								name 		: 'gishatich',
+								time 		: variable.time,
+								patjar	: 'mahacel e kaycakic'
+							}
+							variable.arr_obj.push(obj);
 							variable.gishatich.splice(k, 1);
 							break;
 						}
@@ -87,6 +117,12 @@ module.exports.class_kaycak = class kaycak extends cnox.class_kendani {
 				else if (variable.matrix[i][this.x] == 5) {
 					for (var k in variable.hakakaycakner) {
 						if (variable.hakakaycakner[k].y == i && variable.hakakaycakner[k].x == this.x) {
+							var obj = {
+								name 		: 'hakakaycak',
+								time 		: variable.time,
+								patjar	: 'mahacel e kaycakic'
+							}
+							variable.arr_obj.push(obj);
 							variable.hakakaycakner.splice(k, 1);
 							break;
 						}

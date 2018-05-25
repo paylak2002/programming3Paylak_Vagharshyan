@@ -25,6 +25,12 @@ module.exports.class_gishatich = class gishatich extends cnox.class_kendani {
 	die() {
 		for (var i in variable.gishatichner) {
 			if (variable.gishatichner[i].x == this.x && variable.gishatichner[i].y == this.y) {
+				var obj = {
+					name 		: 'gishatich',
+					time 		: variable.time,
+					patjar	: 'sovic'
+				}
+				variable.arr_obj.push(obj);
 				variable.gishatichner.splice(i, 1);
 				variable.matrix[this.y][this.x] = 0;
 			}
@@ -36,6 +42,12 @@ module.exports.class_gishatich = class gishatich extends cnox.class_kendani {
 			var ran = random(this.yntrelVandak(2));
 			for (var i in variable.kover) {
 				if (variable.kover[i].x == ran[0] && variable.kover[i].y == ran[1]) {
+					var obj = {
+						name 		: 'xotaker',
+						time 		: variable.time,
+						patjar	: 'kerel e gishatichy'
+					}
+					variable.arr_obj.push(obj);
 					variable.kover.splice(i, 1);
 				}
 			}

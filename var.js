@@ -13,6 +13,10 @@ var multiply3 = 0;
 var bool = true;
 var exanak = 0;
 global.exanak_global = exanak;
+var time = 0;
+var arr_obj = [];
+var statica = 0;
+console.log(statica);
 //////////////////////patahakan matrix///////////////////////////////////
 for (var i = 0; i < Y; i++) {
 	matrix.push([]);
@@ -34,18 +38,21 @@ global.random = function(arr){
 }
 
 module.exports = {
-	S				:	S,
-	kaycakner		:	kaycakner,
+	S							:	S,
+	kaycakner			:	kaycakner,
 	gishatichner	:	gishatichner,
 	hakakaycakner	:	hakakaycakner,
-	xoter			:	xoter,
-	kover			:	kover,
-	matrix			:	matrix,
-	X				:	X,
-	Y				:	Y,
-	multiply1		:	multiply1,
-	multiply2		:	multiply2,
-	multiply3		:	multiply3,
-	bool			:	bool,
-	exanak			:	exanak,
+	xoter					:	xoter,
+	kover					:	kover,
+	matrix				:	matrix,
+	X							:	X,
+	Y							:	Y,
+	multiply1			:	multiply1,
+	multiply2			:	multiply2,
+	multiply3			:	multiply3,
+	bool					:	bool,
+	exanak				:	exanak,
+	time					: time,
+	arr_obj				: arr_obj,
+	statica				: statica
 }

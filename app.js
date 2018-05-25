@@ -2,6 +2,8 @@ var express = require("express");
 var app = express();
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
+var fs = require('fs');
+var port = process.env.PORT || 3000;
 
 app.use(express.static("public"));
 
@@ -9,7 +11,7 @@ app.get("/", function(req, res){
    res.sendFile(__dirname + "/index.html");
 });
 
-server.listen(3000, function(){
+server.listen(port, function(){
    console.log("Start");
 });
 var exanak_multiply = 0;
@@ -20,6 +22,13 @@ var kendaniner_class = {
 	kayc : require("./class_kaycak").class_kaycak,
 	ko : require("./class_kov").class_kov,
 	xo : require("./class_xot").class_xot
+}
+function main(){
+   var file  = "obj.json";
+   for(var i in variable.arr_obj)
+   {
+     fs.appendFileSync(file, JSON.stringify(variable.arr_obj[i]) + '\n');
+   }
 }
 //////////////////////hakakaycakneri grancman hamar///////////////////
 for (var i = 0; i < variable.matrix.length; ++i) {
@@ -72,6 +81,8 @@ process.env.NODE_ENV='production';
 io.on('connection',function(socket){
 	setInterval(function(){
 ///////////////////////////////////////////////////////////////
+    variable.statica++;
+    variable.time += 500;
 		variable.multiply1++;
 		variable.multiply2++;
 		variable.multiply3++;
@@ -136,11 +147,18 @@ io.on('connection',function(socket){
 		/////////////////////////////////////////////////////
 		if(variable.gishatichner.length != 0 && variable.kover.length != 0)
 		{
-		io.sockets.emit('matrix' ,variable.matrix);
+  		io.sockets.emit('matrix' ,variable.matrix);
 		}
 		else {
-		io.sockets.emit('bool');
-		}
+		  io.sockets.emit('bool');
+    }
 		//////////////////////////////////////////////////////////////
+    if(variable.statica >= 6)
+    {
+      main();
+      variable.arr_obj = [];
+      variable.statica = 0;
+    }
+    //////////////////////////////////////////////////////////////////
 	},500);
 });
