@@ -1,7 +1,7 @@
 var xoteri_guyn = '';
 var socket = io.connect('http://localhost:3000');
 function setup(){
-	createCanvas(30 * 10,30 * 10);
+	createCanvas(30 * 15,30 * 15);
 	background('#acacac');
 }
 socket.on('bool',function(data){
@@ -15,32 +15,32 @@ socket.on('matrix',function(data){
 			if(data[i][j] == 0)
 			{
 				fill('#acacac');
-				rect(j * 10,i * 10,10,10);
+				rect(j * 15,i * 15,15,15);
 			}
 			else if(data[i][j] == 1)
 			{
 				fill(xoteri_guyn);
-				rect(j * 10,i * 10,10,10);
+				rect(j * 15,i * 15,15,15);
 			}
 			else if(data[i][j] == 2)
 			{
 				fill('yellow');
-				rect(j * 10,i * 10,10,10);
+				rect(j * 15,i * 15,15,15);
 			}
 			else if(data[i][j] == 3)
 			{
 				fill('red');
-				rect(j * 10,i * 10,10,10);
+				rect(j * 15,i * 15,15,15);
 			}
 			else if(data[i][j] == 4)
 			{
 				fill('orange');
-				rect(j * 10,i * 10,10,10);
+				rect(j * 15,i * 15,15,15);
 			}
 			else if(data[i][j] == 5)
 			{
 				fill('black');
-				rect(j * 10,i * 10,10,10);
+				rect(j * 15,i * 15,15,15);
 			}
 		}
 	}

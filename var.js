@@ -1,4 +1,4 @@
-var S = 10;
+var S = 20;
 var kaycakner = [];
 var gishatichner = [];
 var hakakaycakner = [];
