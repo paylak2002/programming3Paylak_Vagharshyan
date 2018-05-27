@@ -1,5 +1,5 @@
 var xoteri_guyn = '';
-var socket = io.connect('http://localhost:3000');
+var socket = io.connect('https://programming3paylak.herokuapp.com/');
 function setup(){
 	createCanvas(30 * 15,30 * 15);
 	background('#acacac');

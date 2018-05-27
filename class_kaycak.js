@@ -27,7 +27,6 @@ module.exports.class_kaycak = class kaycak extends cnox.class_kendani {
 					for (var k in variable.xoter) {
 						if (variable.xoter[k].x == i && variable.xoter[k].y == this.y) {
 							variable.xoter.splice(k, 1);
-							break;
 						}
 					}
 				}
@@ -82,7 +81,6 @@ module.exports.class_kaycak = class kaycak extends cnox.class_kendani {
 					for (var k in variable.xoter) {
 						if (variable.xoter[k].y == i && variable.xoter[k].x == this.x) {
 							variable.xoter.splice(k, 1);
-							break;
 						}
 					}
 				}
